@@ -13,8 +13,12 @@ actual_temp=21
 have_pets=True
 birth_date=2001
 
-print (" Mi ciudad es: ", city, "\n", "Temperatura actual: ", actual_temp, "\n", 
-       "Tienes mascotas!", have_pets, "\n", "Fecha de nacimiento: ", birth_date, "\n\n")
+print (" Mi ciudad es: ", city, "\n") 
+print ("Temperatura actual: ", actual_temp, "\n")       
+print ("Tienes mascotas!", have_pets, "\n") 
+print ("Fecha de nacimiento: ", birth_date, "\n\n")
+
+#IGNORAR, SOLO ESTA PARA SEPARAR
 
 animal, animal_age, is_a_mammal= "Gato", 2, True
 
