@@ -16,14 +16,39 @@ Tareas:
 print("/" * 57, "\n")
 total = int(input("Introduzca monto a pagar:"))
 
+while total <= 0:
+    print("\n","/" * 57, "\n")
+    print("No se permiten montos negativos o 0. Intenta de nuevo.")
+    print("\n","/" * 57, "\n")
+    total = int(input("Introduzca monto a pagar:"))
+
 print("\n","/" * 57, "\n")
 valo = int(input("¿Cual fue la valoracion sobre el servicio?: \n\n 1-Excelente \n 2-Bueno \n 3-Regular \n\n:"))
+
+while valo != (1 or 2 or 3):
+    print("\n","/" * 57, "\n")
+    print("Elija una de las opciones mostradas. Intenta de nuevo.")
+    print("\n","/" * 57, "\n")
+    valo = int(input("¿Cual fue la valoracion sobre el servicio?: \n\n 1-Excelente \n 2-Bueno \n 3-Regular \n\n:"))
 
 print("\n","/" * 57, "\n")
 div = int(input("¿Quiere dividir la cuenta? \n\n 0-No \n 1-Si \n\n:"))
 boole = bool(div)
 
+while div != (0 or 1):
+    print("\n","/" * 57, "\n")
+    print("Elija una de las opciones mostradas. Intenta de nuevo.")
+    print("\n","/" * 57, "\n")
+    div = int(input("¿Quiere dividir la cuenta? \n\n 0-No \n 1-Si \n\n:"))
+    boole = bool(div)
+
 if div == True:
+    print("\n","/" * 57, "\n")
+    pers = int(input("Introduce la cantidad de personas:"))
+
+while pers <= 0:
+    print("\n","/" * 57, "\n")
+    print("No se permiten montos negativos o 0. Intenta de nuevo.")
     print("\n","/" * 57, "\n")
     pers = int(input("Introduce la cantidad de personas:"))
 
