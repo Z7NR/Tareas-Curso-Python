@@ -18,21 +18,62 @@ ustedes llamado documento.txt.( Pista: Deben usar condicionales, el método spli
 
 
 """
-from Funciones import write, read, create
+from Funciones import write, read, create, erased, line_count, search_word, word_counter, copy
 import os
+import pyfiglet
 
-print("Ingrese un numero del 1 al 5")
-number = input("Numero: ")
+while True:
 
-#while exit == "1":
+    os.system("cls")
+    ascii_art = pyfiglet.figlet_format("Menu", font="slant")
+    print(ascii_art)
+    print("\n¿Que desea hacer?")
+    print("1- Crear archivo de texto")
+    print("2- Escribir en un archivo de texto")
+    print("3- Leer contenido del archivo de texto")
+    print("4- Borrar archivo de texto")
+    print("5- Contador de lineas")
+    print("6- Buscador de palabra")
+    print("7- Contador de palabra")
+    print("8- Copiar contenido de un archivo de texto a otro")
+    print("Ingrese 0 para salir")
+    number = input("\nNumero: ")
 
-match number:
-
-    case "1":
-        create()
-    case "2":
-        write() 
-    case "3":
-        read() 
 
 
+    match number:
+
+        case "1":
+                create()
+        case "2":
+                write() 
+        case "3":
+                read() 
+        case "4":
+                erased()
+        case "5":
+                line_count()
+
+        case "6":
+                search_word()
+
+        case "7":
+                word_counter()
+
+        case "8":
+                copy()
+
+        case "0":
+                os.system("cls")
+                ascii_art = pyfiglet.figlet_format("Saliendo del programa... Gracias por usarme :)", font="slant")
+                print(ascii_art)
+                input("\nPresione enter para salir...")
+                os.system("cls") 
+                break
+
+        case _:
+            os.system("cls") 
+            print("♠"*50)
+            print("Opción inválida.")
+            input("\nPresione enter para salir...")
+            os.system("cls") 
