@@ -2,8 +2,15 @@ import os, re
 import pyfiglet
 
 def create():
+    """
+    Crea un archivo de texto en la ruta "./Asignaciones/Procesador de texto/"
+    Pide el nombre del archivo al usuario y lo crea.
+    Si el archivo existe, pregunta al usuario si desea sobrescribirlo.
+
+    Returns:
+        bool: True si el archivo se creó correctamente. False si no lo hizo.
+    """
     try:
-        
         while True:
             os.system("cls") 
             ascii_art = pyfiglet.figlet_format("Crear archivo", font="slant")
@@ -14,7 +21,7 @@ def create():
                 print("Por favor, limitese a escribir el nombre del archivo sin incluir '.txt' o algún otro tipo de extensión " \
                 "y sin dejar en blanco")
                 continue
-            ruta = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{name}.txt"
+            ruta = f"./Asignaciones/Procesador de texto/{name}.txt"
 
             if os.path.exists(ruta): #comprueba si el archivo existe
                     os.system("cls") 
@@ -46,10 +53,8 @@ def create():
                         case _:
                             print("♠"*50)
                             print("Opción inválida.")
-            
             else: 
-            
-                with open(ruta, "w") as document:
+                with open(ruta, "w"):
                     print(f"Archivo '{name}.txt' creado correctamente.")
                 return True
 
@@ -64,7 +69,6 @@ def create():
 
 def write(): 
     try:
-        
         while True:
             os.system("cls") 
             ascii_art = pyfiglet.figlet_format("Escribir en archivo", font="slant")
@@ -75,7 +79,7 @@ def write():
                 print("Por favor, limitese a escribir el nombre del archivo sin incluir '.txt' o algún otro tipo de extensión " \
                 "y sin dejar en blanco")
                 continue
-            ruta = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{name}.txt"
+            ruta = f"./Asignaciones/Procesador de texto/{name}.txt"
 
             if os.path.exists(ruta): #comprueba si el archivo existe
                     os.system("cls") 
@@ -133,7 +137,7 @@ def read():
                 print("Por favor, limitese a escribir el nombre del archivo sin incluir '.txt' o algún otro tipo de extensión " \
                 "y sin dejar en blanco")
                 continue
-            ruta = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{name}.txt"
+            ruta = f"./Asignaciones/Procesador de texto/{name}.txt"
 
             if os.path.exists(ruta): #comprueba si el archivo existe
                 os.system("cls") 
@@ -192,7 +196,7 @@ def erased():
                 print("Por favor, limitese a escribir el nombre del archivo sin incluir '.txt' o algún otro tipo de extensión " \
                 "y sin dejar en blanco")
                 continue
-            ruta = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{name}.txt"
+            ruta = f"./Asignaciones/Procesador de texto/{name}.txt"
 
             print(f"\n¿Estas seguro de querer borrar el archivo {name}? No podra ser recuperado despues")
             print("1- Continuar / 2- Colocar otro nombre / 3- Salir del programa")  
@@ -254,7 +258,7 @@ def line_count():
                 print("Por favor, limitese a escribir el nombre del archivo sin incluir '.txt' o algún otro tipo de extensión " \
                 "y sin dejar en blanco")
                 continue
-            ruta = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{name}.txt"
+            ruta = f"./Asignaciones/Procesador de texto/{name}.txt"
 
             if os.path.exists(ruta): #comprueba si el archivo existe
                 os.system("cls") 
@@ -316,7 +320,7 @@ def search_word():
                 print("Por favor, limitese a escribir el nombre del archivo sin incluir '.txt' o algún otro tipo de extensión " \
                 "y sin dejar en blanco")
                 continue
-            ruta = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{name}.txt"
+            ruta = f"./Asignaciones/Procesador de texto/{name}.txt"
 
             if os.path.exists(ruta): #comprueba si el archivo existe
                 os.system("cls") 
@@ -335,7 +339,7 @@ def search_word():
                         linea_limpia = linea.strip()
 
                         if palabra.lower() in linea_limpia.lower():
-                            print(linea_limpia)
+                            print(f"La palabra {palabra} se encuentra en la siguiente linea: {linea_limpia}") #imprime la linea en la que se encuentra la palabra 
                             find = True
                     
                     if not find:
@@ -391,7 +395,7 @@ def word_counter():
                 print("Por favor, limitese a escribir el nombre del archivo sin incluir '.txt' o algún otro tipo de extensión " \
                 "y sin dejar en blanco")
                 continue
-            ruta = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{name}.txt"
+            ruta = f"./Asignaciones/Procesador de texto/{name}.txt"
 
             if os.path.exists(ruta): #comprueba si el archivo existe
                 os.system("cls") 
@@ -469,7 +473,7 @@ def copy():
             if not re.match(r"^[\w-]+$", origen_name):
                 print("Por favor, escriba solo el nombre del archivo sin '.txt', sin espacios y sin dejar en blanco.")
                 continue
-            ruta_origen = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{origen_name}.txt"
+            ruta_origen = f"./Asignaciones/Procesador de texto/{origen_name}.txt"
 
             if not os.path.exists(ruta_origen):
                 print(f"El archivo {origen_name} no existe.")
@@ -482,7 +486,7 @@ def copy():
             if not re.match(r"^[\w-]+$", destino_name):
                 print("Por favor, escriba solo el nombre del archivo sin '.txt', sin espacios y sin dejar en blanco.")
                 continue
-            ruta_destino = f"./Tareas-Curso-Python/Asignaciones/Procesador de texto/{destino_name}.txt"
+            ruta_destino = f"./Asignaciones/Procesador de texto/{destino_name}.txt"
 
             with open(ruta_destino, "w") as destino:
                 destino.write(contenido)
