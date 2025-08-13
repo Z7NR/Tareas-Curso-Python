@@ -22,6 +22,7 @@ from Funciones import write, read, create, erased, line_count, search_word, word
 import os
 import pyfiglet
 
+
 while True:
 
     os.system("cls")
